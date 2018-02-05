@@ -52,7 +52,17 @@ public class Evaluation {
 	 */
 	@Override
 	public String toString() {
-		return (isGameOver ? "Game Over" : "Playing Game") + " " + score;
+		String scoreString;
+		if (score == X_WON) {
+			scoreString = "X Won";
+		} else if (score == O_WON) {
+			scoreString = "O Won";
+		} else if (isGameOver) {
+			scoreString = "Draw";
+		} else {
+			scoreString = "Playing";
+		}
+		return scoreString;
 	}
 
 }
